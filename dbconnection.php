@@ -1,6 +1,6 @@
 <?php
 
-$servername = "cwl.cs.unca.edu";
+$servername = "avl.cs.unca.edu";
 $username = "ewarren1";
 $password = "mysql4you";
 
