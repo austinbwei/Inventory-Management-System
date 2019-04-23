@@ -105,6 +105,10 @@ if (isset($_POST['login_user'])) {
     }
 }
 
+
+$_SESSION['userName'] = $username;
+
+
 $conn->close();
 
 ?>
