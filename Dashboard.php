@@ -1,4 +1,9 @@
-<?php include('dbconnection.php') ?>
+<?php
+session_start();
+
+include('dbconnection.php') ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +14,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Jekyll v3.8.5">
-<title>Dashboard Template · Bootstrap</title>
+<title>Dashboard Template Â· Bootstrap</title>
 <!-- BootstrapCDN from https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -66,6 +71,9 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 						<li class="nav-item"><a class="nav-link" href="product_list.php"> <span
 								data-feather="shopping-cart"></span> Products
 						</a></li>
+						<li class="nav-item"><a class="nav-link" href="product_list.php"> <span
+								data-feather="shopping-cart"></span> Products
+						</a></li>
 						<li class="nav-item"><a class="nav-link" href="orders.php"> <span
 								data-feather="file"></span> Orders
 						</a></li>
@@ -82,7 +90,7 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 			<div
 				class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-				<h1 class="h1">Dashboard</h1>
+				<h1 class="h1"> <?php echo " Welcome ". $_SESSION['username'] . ""	?>		  </h1>
 				<div class="btn-toolbar mb-2 mb-md-0">
 					<div class="btn-group mr-2">
 						<button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -104,7 +112,17 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 					<th>Name</th>
 					<th>Quantity</th>
 				</tr>
+			
 			<?php 
+			
+			$servername = "avl.cs.unca.edu";
+			$username = "ewarren1";
+			$password = "sql4you";
+			$dbname = "ewarren1DBCSCI338";
+			
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			
 			$sql = "SELECT idProduct, productName, inventoryOnHand FROM Product";
 			$result = $conn->query($sql);
 			
@@ -117,7 +135,8 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			    echo "0 Results";
 			}
 			
-			$conn->close();
+		//	$conn->close();
+			
 			?>
 			</table>
 			
