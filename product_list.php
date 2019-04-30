@@ -9,7 +9,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Jekyll v3.8.5">
-<title>Dashboard Template · Bootstrap</title>
+<title>Dashboard Template Â· Bootstrap</title>
 <!-- BootstrapCDN from https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -107,6 +107,14 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 					<th>Price Per Unit</th>
 				</tr>
 			<?php 
+			$servername = "avl.cs.unca.edu";
+			$username = "ewarren1";
+			$password = "sql4you";
+			$dbname = "ewarren1DBCSCI338";
+			
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			
 			$sql = "SELECT * FROM Product";
 			
 			$result = $conn->query($sql);
