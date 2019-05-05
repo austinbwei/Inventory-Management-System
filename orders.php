@@ -9,7 +9,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Jekyll v3.8.5">
-<title>Dashboard Template · Bootstrap</title>
+<title>Dashboard Template Â· Bootstrap</title>
 <!-- BootstrapCDN from https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -77,19 +77,6 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			</nav>
 		</div>
 	</div>
-	
-	
-	<center>
-			<h3>Order Inventory</h3>
-			<form method="post" action="order_php.php">
-				*Product ID: <input name="idProduct" type="number" min="1" max="9999" required>
-				<br>
-				*Product Quantity: <input name="productQuantity" type="text" required>
-				<br>
-				<input type = "submit" value = "Order">
-			</form>
-	 </center>
-	 
 	 
 	 	<h2>Order History</h2>
 			<table>
@@ -125,8 +112,30 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			
 			?>
 			</table>
-	 
-	 
+<br>
+
+<h3>Order Inventory</h3>
+			<form method="post" action="order_php.php">
+				*Product ID: <input name="idProduct" type="number" min="1" max="9999" required>
+				<br>
+				*Title: <input name="title" type="text" required>
+				<br>
+				*First: <input name="first" type="text" required>
+				<br>
+				*Middle: <input name="middle" type="text" required>
+				<br>
+				*Last: <input name="last" type="text" required>
+				<br>
+				*Amount Shipped: <input name="amountShipped" type="number" required>
+				<br>
+				*Date: <input name="date" type="date" required>
+				<br>
+				*Account ID: <input name="accountID" type="number" required>
+				<br>
+				*Total Price: <input name="priceTotal" type="number" required>
+				<br>
+				<input type = "submit" value = "Order">
+			</form> 
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
