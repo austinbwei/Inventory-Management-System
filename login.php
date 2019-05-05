@@ -1,6 +1,5 @@
 <?php include('dbconnection.php') ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +24,6 @@
 			<div class="card-header">
 				<h3>Sign In</h3>
 				<div class="d-flex justify-content-end social_icon">
-					<span><i class="fab fa-facebook-square"></i></span>
 				</div>
 			</div>
 			<div class="card-body">

@@ -1,5 +1,5 @@
-<?php
-    include('dbconnection.php');
+<?php    
+    $conn = mysqli_connect("avl.cs.unca.edu", "ewarren1", "sql4you", "ewarren1DBCSCI338");
 
     $idProduct = $_POST['idProduct'];
     $productName = $_POST['productName'];
@@ -15,7 +15,7 @@
              VALUES('$idProduct', '$productName', '$partNumber', '$productLabel', '$startingInventory', $invertoryRecieved, $inventoryShipped, '$inventoryOnHand', '$price_Per_Unit')";
     
     if(!mysqli_query($conn, $sql)) {
-        echo "An error occured when inserting the product";
+        echo "An error occurred when inserting the product";
     } else {
         echo "Product inserted successfully.";
     }

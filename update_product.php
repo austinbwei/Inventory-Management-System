@@ -1,5 +1,5 @@
 <?php
-    include('dbconnection.php');
+    $conn = mysqli_connect("avl.cs.unca.edu", "ewarren1", "sql4you", "ewarren1DBCSCI338");
     
     $idProduct = $_POST['idProduct'];
     $productName = $_POST['productName'];

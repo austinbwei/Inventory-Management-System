@@ -9,7 +9,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Jekyll v3.8.5">
-<title>Dashboard Template Â· Bootstrap</title>
+<title>Dashboard Template · Bootstrap</title>
 <!-- BootstrapCDN from https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -55,6 +55,8 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 					out</a></li>
 		</ul>
 	</nav>
+	
+		<canvas class="my-4 w-100" id="myChart" width="0" height="0"></canvas>
 	
 		<div class="container-fluid">
 		<div class="row">

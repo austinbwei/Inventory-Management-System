@@ -1,8 +1,6 @@
 <?php
 session_start();
-
-include('dbconnection.php') ?>
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +36,6 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 	-ms-user-select: none;
 	user-select: none;
 }
-
 @media ( min-width : 768px) {
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
@@ -62,6 +59,9 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 					out</a></li>
 		</ul>
 	</nav>
+	
+	<canvas class="my-4 w-100" id="myChart" width="0" height="0"></canvas>
+	
 
 	<div class="container-fluid">
 		<div class="row">
@@ -76,9 +76,6 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="orders.php"> <span
 								data-feather="file"></span> Orders
-						</a></li>
-						<li class="nav-item"><a class="nav-link" href="finance.php"> <span
-								data-feather="users"></span> Finances
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="account_information.php"> <span
 								data-feather="users"></span> Account Information
