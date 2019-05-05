@@ -9,7 +9,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Jekyll v3.8.5">
-<title>Dashboard Template Â· Bootstrap</title>
+<title>Dashboard Template · Bootstrap</title>
 <!-- BootstrapCDN from https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -33,7 +33,6 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 	-ms-user-select: none;
 	user-select: none;
 }
-
 @media ( min-width : 768px) {
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
@@ -56,6 +55,9 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 					out</a></li>
 		</ul>
 	</nav>
+	
+		<canvas class="my-4 w-100" id="myChart" width="0" height="0"></canvas>
+	
 		<div class="container-fluid">
 		<div class="row">
 			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -66,9 +68,6 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="orders.php"> <span
 								data-feather="file"></span> Orders
-						</a></li>
-						<li class="nav-item"><a class="nav-link" href="finance.php"> <span
-								data-feather="users"></span> Finances
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="account_information.php"> <span
 								data-feather="users"></span> Account Information
@@ -107,6 +106,14 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 					<th>Price Per Unit</th>
 				</tr>
 			<?php 
+			$servername = "avl.cs.unca.edu";
+			$username = "ewarren1";
+			$password = "sql4you";
+			$dbname = "ewarren1DBCSCI338";
+			
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			
 			$sql = "SELECT * FROM Product";
 			
 			$result = $conn->query($sql);
@@ -135,15 +142,15 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 				<br>
 				*Part Number: <input name="partNumber" type="text" required>
 				<br>
-				Product Description: <input name="productLabel" type="text">
+				*Product Description: <input name="productLabel" type="text" required>
 				<br>
-				*Starting Inventory: <input name="startingInventory" type="text" required>
+				*Starting Inventory: <input name="startingInventory" type="number" min="0" max="9999" required>
 				<br> 
-				Inventory Received: <input name="invertoryRecieved" type="text">
+				*Inventory Received: <input name="invertoryRecieved" type="number" min="0" max="9999" required>
 				<br> 
-				Inventory Shipped: <input name="inventoryShipped" type="text">
+				*Inventory Shipped: <input name="inventoryShipped" type="number" min="0" max="9999" required>
 				<br> 
-				*Inventory On Hand: <input name="inventoryOnHand" type="text" required>
+				*Inventory On Hand: <input name="inventoryOnHand" type="number" min="0" max="9999" required>
 				<br>
 				*Price Per Unit: <input name="price_Per_Unit" type="number" min="1" max="9999" required>
 				<br>

@@ -7,7 +7,6 @@
 
     <link rel="stylesheet" href="style/registration_form.css" />
 
-
 </head>
 <body>
         <!-- Sign up form -->

@@ -9,7 +9,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Jekyll v3.8.5">
-<title>Dashboard Template Â· Bootstrap</title>
+<title>Dashboard Template · Bootstrap</title>
 <!-- BootstrapCDN from https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -33,7 +33,6 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 	-ms-user-select: none;
 	user-select: none;
 }
-
 @media ( min-width : 768px) {
 	.bd-placeholder-img-lg {
 		font-size: 3.5rem;
@@ -52,10 +51,12 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			name</a> <input class="form-control form-control-dark w-100" type="text"
 			placeholder="Search" aria-label="Search">
 		<ul class="navbar-nav px-3">
-			<li class="nav-item text-nowrap"><a class="nav-link" href="#">Sign
+			<li class="nav-item text-nowrap"><a class="nav-link" href="login.php">Sign
 					out</a></li>
 		</ul>
 	</nav>
+	
+		<canvas class="my-4 w-100" id="myChart" width="0" height="0"></canvas>
 	
 		<div class="container-fluid">
 		<div class="row">
@@ -68,9 +69,6 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 						<li class="nav-item"><a class="nav-link" href="product_list.php"> <span
 								data-feather="file"></span> Products
 						</a></li>
-						<li class="nav-item"><a class="nav-link" href="finance.php"> <span
-								data-feather="users"></span> Finances
-						</a></li>
 						<li class="nav-item"><a class="nav-link" href="account_information.php"> <span
 								data-feather="users"></span> Account Information
 						</a></li>
@@ -79,6 +77,57 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			</nav>
 		</div>
 	</div>
+	
+	
+	<center>
+			<h3>Order Inventory</h3>
+			<form method="post" action="order_php.php">
+				*Product ID: <input name="idProduct" type="number" min="1" max="9999" required>
+				<br>
+				*Product Quantity: <input name="productQuantity" type="text" required>
+				<br>
+				<input type = "submit" value = "Order">
+			</form>
+	 </center>
+	 
+	 
+	 	<h2>Order History</h2>
+			<table>
+				<tr>
+					<th>Product ID</th>
+					<th>Amount Shipped</th>
+					<th>Date of Order</th>
+					<th>Total Price</th>					
+				</tr>
+				
+			<?php 
+			$servername = "avl.cs.unca.edu";
+			$username = "ewarren1";
+			$password = "sql4you";
+			$dbname = "ewarren1DBCSCI338";
+			
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			
+			$sql = "SELECT * FROM Orders";
+			
+			$result = $conn->query($sql);
+			
+			if ($result->num_rows > 0) {
+			    while($row = $result->fetch_assoc()) {
+			        echo "<tr><td>" . $row["Product_idProduct"]. "</td><td>" . $row["amountShipped"]. "</td><td>" . $row["dateOfOrder"]. 
+			        "</td><td>" . $row["price_Total"]. "</td></tr>";
+			    }
+			    echo "</table>";
+			} else {
+			    echo "0 Results";
+			}
+			
+			?>
+			</table>
+	 
+	 
+	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
