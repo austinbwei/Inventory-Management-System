@@ -51,7 +51,7 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			name</a> <input class="form-control form-control-dark w-100" type="text"
 			placeholder="Search" aria-label="Search">
 		<ul class="navbar-nav px-3">
-			<li class="nav-item text-nowrap"><a class="nav-link" href="#">Sign
+			<li class="nav-item text-nowrap"><a class="nav-link" href="login.php">Sign
 					out</a></li>
 		</ul>
 	</nav>
@@ -189,25 +189,9 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 				ID to Delete: <input name="idProduct" type="number" min="1" max="9999" required>
 				<br>
 				<input type = "submit" value = "Delete">
-			</form>
-			
-			
-			
-			
+			</form>			
 			</main>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-	<script src="/docs/4.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-	<script src="dashboard.js"></script>
 </body>
 </html>
