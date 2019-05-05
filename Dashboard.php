@@ -71,6 +71,9 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 						<li class="nav-item"><a class="nav-link" href="product_list.php"> <span
 								data-feather="shopping-cart"></span> Products
 						</a></li>
+						<li class="nav-item"><a class="nav-link" href="product_list.php"> <span
+								data-feather="shopping-cart"></span> Products
+						</a></li>
 						<li class="nav-item"><a class="nav-link" href="orders.php"> <span
 								data-feather="file"></span> Orders
 						</a></li>

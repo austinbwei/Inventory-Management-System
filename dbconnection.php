@@ -1,9 +1,12 @@
 <?php
 session_start();
+
 // CREATE CONNECTION!
 $conn = mysqli_connect("avl.cs.unca.edu", "ewarren1", "sql4you", "ewarren1DBCSCI338") or die("Connection failed: ");
+
 // Errors Array
 $errors = array();
+
 // REGISTER USER
 if (isset($_POST['signup1'])) {
     
@@ -74,6 +77,7 @@ if (isset($_POST['signup1'])) {
         header('location: login.php');
     }
 }
+
 // LOGIN STUFF
 if (isset($_POST['login_user'])) {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
@@ -101,6 +105,7 @@ if (isset($_POST['login_user'])) {
         array_push($errors, "Wrong username/password combination");
     }
 }
+
 $_SESSION['userName'] = $username;
 $conn->close();
 ?>
