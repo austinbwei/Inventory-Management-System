@@ -12,7 +12,7 @@ session_start();
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Jekyll v3.8.5">
-<title>Dashboard Template Â· Bootstrap</title>
+<title>Dashboard</title>
 <!-- BootstrapCDN from https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -71,9 +71,6 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 						<li class="nav-item"><a class="nav-link" href="product_list.php"> <span
 								data-feather="shopping-cart"></span> Products
 						</a></li>
-						<li class="nav-item"><a class="nav-link" href="product_list.php"> <span
-								data-feather="shopping-cart"></span> Products
-						</a></li>
 						<li class="nav-item"><a class="nav-link" href="orders.php"> <span
 								data-feather="file"></span> Orders
 						</a></li>
@@ -100,8 +97,6 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 				</div>
 			</div>
 
-
-
 			<h2>Summary Product List</h2>
 			<table>
 				<tr>
@@ -111,7 +106,6 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 				</tr>
 			
 			<?php 
-			
 			$servername = "avl.cs.unca.edu";
 			$username = "ewarren1";
 			$password = "sql4you";
@@ -131,20 +125,42 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			} else {
 			    echo "0 Results";
 			}
-			
-		//	$conn->close();
-			
 			?>
 			</table>
 			
+			<br>
+			<h3>Summary Order List</h2>
+			<table>
+				<tr>
+					<th>Order ID</th>
+					<th>Product ID</th>
+					<th>Quantity</th>
+					<th>Total Price</th>
+					</tr>
+			
+			<?php 
+			$servername = "avl.cs.unca.edu";
+			$username = "ewarren1";
+			$password = "sql4you";
+			$dbname = "ewarren1DBCSCI338";
+			
+			// Create connection
+			$conn = new mysqli($servername, $username, $password, $dbname);
+			
+			$sql = "SELECT idOrders, Product_idProduct, amountShipped, price_Total FROM Orders";
+			$result = $conn->query($sql);
+			
+			if ($result->num_rows > 0) {
+			    while($row = $result->fetch_assoc()) {
+			        echo "<tr><td>" . $row["idOrders"]. "</td><td>" . $row["Product_idProduct"]. "</td><td>" . $row["amountShipped"]. "</td><td>" . $row["price_Total"] . "</td></tr>";
+			    }
+			    echo "</table>";
+			} else {
+			    echo "0 Results";
+			}
+			?>
+			</table>
 			<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-			
-			
-			
-			
-			
-			
-			
 			</main>
 		</div>
 	</div>
