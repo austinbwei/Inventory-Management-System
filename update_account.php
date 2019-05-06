@@ -3,6 +3,7 @@ $conn = mysqli_connect("avl.cs.unca.edu", "ewarren1", "sql4you", "ewarren1DBCSCI
 
 
     $userName = $_SESSION['username'];
+    $accountID = $_POST['accountID'];
     $email = $_POST['email'];
     $firstName = $_POST['firstName'];
     $middleName = $_POST['middleName'];
@@ -14,7 +15,7 @@ $conn = mysqli_connect("avl.cs.unca.edu", "ewarren1", "sql4you", "ewarren1DBCSCI
     $sql = "UPDATE `Account` SET 
            `userName`='".$userName."',`email`='".$email."',`First`= '".$firstName."',
            `Middle`='".$middleName."',`Last`='".$lastName."',
-           `companyName`='".$companyName."',`password`= $password  WHERE `userName`= {$_SESSION['username']}";
+           `companyName`='".$companyName."',`password`= $password  WHERE `idAccount`= $accountID";
                  
  
 $result= mysqli_query($conn, $sql);
