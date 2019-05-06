@@ -89,27 +89,10 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 						<span data-feather="calendar"></span> This week
 					</button>
 				</div>
-			</div>
-			
-			<table>
-				<tr>
-					<th>Username</th>
-					<th>Email</th>
-					<th>First Name </th>
-					<th>Middle Name </th>
-					<th>Last Name </th>
-					<th>Company Name</th>
-				</tr>
-			
-			<?php 
-			        echo "<tr><td>" . $_SESSION["userName"]. "</td><td>" . $_SESSION["email"]. "</td><td>" . $_SESSION["firstName"]. "</td><td>";
-				    echo "</table>";		
-			?>
-			</table>
-			
+			</div>			
 			<canvas class="my-4 w-100" id="myChart" width="900" height="100"></canvas>
 			
-			<h3>Update Your Account Information</h3>
+			<h2>Update Your Account Information</h2>
 			<form method="post" action="update_account.php">
 				
 				Username: <input name="userName" type="text" >
@@ -128,6 +111,7 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 				<br> 
 				<input type = "submit" value = "Update">
 			</form>
+			
 			</main>
 		</div>
 	</div>
