@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 include('dbconnection.php') ?>
 
 <!DOCTYPE html>
@@ -12,11 +11,6 @@ include('dbconnection.php') ?>
 <!-- BootstrapCDN from https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script
-	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <style>
 <
 link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
@@ -91,11 +85,11 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 				</div>
 			</div>			
 			<canvas class="my-4 w-100" id="myChart" width="900" height="100"></canvas>
+			 <?php echo " Your username is ". $_SESSION['username'] . ""?>
 			
 			<h2>Update Your Account Information</h2>
 			<form method="post" action="update_account.php">
-				
-				Username: <input name="userName" type="text" >
+				Account ID: <input name="accountID" type="number" >
 				<br>
 				Email: <input name="email" type="text" >
 				<br>
