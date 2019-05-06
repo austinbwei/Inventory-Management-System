@@ -8,7 +8,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Jekyll v3.8.5">
-<title>Dashboard Template · Bootstrap</title>
+<title>Orders Page</title>
 <!-- BootstrapCDN from https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -77,10 +77,16 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 		</div>
 	</div>
 	 
+	<center>
 	 	<h2>Order History</h2>
 			<table>
 				<tr>
 					<th>Product ID</th>
+					<th>Account ID</th>
+					<th>Title</th>
+					<th>First</th>
+					<th>Middle</th>
+					<th>Last</th>
 					<th>Amount Shipped</th>
 					<th>Date of Order</th>
 					<th>Total Price</th>					
@@ -101,7 +107,8 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			
 			if ($result->num_rows > 0) {
 			    while($row = $result->fetch_assoc()) {
-			        echo "<tr><td>" . $row["Product_idProduct"]. "</td><td>" . $row["amountShipped"]. "</td><td>" . $row["dateOfOrder"]. 
+			        echo "<tr><td>" . $row["Product_idProduct"]. "</td><td>" . $row["Account_idAccount"]. "</td><td>" . $row["Title"]. "</td><td>" .$row["First"]. 
+			        "</td><td>" .$row["Middle"]. "</td><td>" .$row["Last"]. "</td><td>"  .$row["amountShipped"]. "</td><td>" . $row["dateOfOrder"]. 
 			        "</td><td>" . $row["price_Total"]. "</td></tr>";
 			    }
 			    echo "</table>";
@@ -135,5 +142,6 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 				<br>
 				<input type = "submit" value = "Order">
 			</form> 
+</center>
 </body>
 </html>
