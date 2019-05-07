@@ -13,6 +13,12 @@ http://arden.cs.unca.edu/~aweiler/IMSTermProject/login.php
 
 
 
-
 To open the project we used Eclipse PHP found here:
 https://www.eclipse.org/pdt/
+
+
+
+
+
+GitHub Repository:
+https://github.com/aweiler97/CSCI338_IMS/tree/Finalize
