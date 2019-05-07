@@ -1,4 +1,3 @@
-<?php include('dbconnection.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
 <meta name="author"
 	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
 <meta name="generator" content="Jekyll v3.8.5">
-<title>Dashboard Template · Bootstrap</title>
+<title>Orders Page</title>
 <!-- BootstrapCDN from https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -58,7 +57,7 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 	
 		<canvas class="my-4 w-100" id="myChart" width="0" height="0"></canvas>
 	
-		<div class="container-fluid">
+	<div class="container-fluid">
 		<div class="row">
 			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
 				<div class="sidebar-sticky">
@@ -75,30 +74,33 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 					</ul>
 				</div>
 			</nav>
-		</div>
-	</div>
-	
-	
-	<center>
-			<h3>Order Inventory</h3>
-			<form method="post" action="order_php.php">
-				*Product ID: <input name="idProduct" type="number" min="1" max="9999" required>
-				<br>
-				*Product Quantity: <input name="productQuantity" type="text" required>
-				<br>
-				<input type = "submit" value = "Order">
-			</form>
-	 </center>
-	 
+			
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			<div
+				class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+				<h1 class="h1">Orders</h1>
+			</div>
 	 
 	 	<h2>Order History</h2>
+			
 			<table>
-				<tr>
-					<th>Product ID</th>
-					<th>Amount Shipped</th>
-					<th>Date of Order</th>
-					<th>Total Price</th>					
-				</tr>
+				<div class="container">
+				<div class="row">
+				<div class="col-md-4">
+				<table class="table table-responsive">
+      				<thead>
+        				<tr>
+          					<th>Product ID</th>
+							<th>Account ID</th>
+							<th>Title</th>
+							<th>First</th>
+							<th>Middle</th>
+							<th>Last</th>
+							<th>Amount Shipped</th>
+							<th>Date of Order</th>
+							<th>Total Price</th>
+        				</tr>
+      				</thead>
 				
 			<?php 
 			$servername = "avl.cs.unca.edu";
@@ -115,7 +117,8 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			
 			if ($result->num_rows > 0) {
 			    while($row = $result->fetch_assoc()) {
-			        echo "<tr><td>" . $row["Product_idProduct"]. "</td><td>" . $row["amountShipped"]. "</td><td>" . $row["dateOfOrder"]. 
+			        echo "<tr><td>" . $row["Product_idProduct"]. "</td><td>" . $row["Account_idAccount"]. "</td><td>" . $row["Title"]. "</td><td>" .$row["First"]. 
+			        "</td><td>" .$row["Middle"]. "</td><td>" .$row["Last"]. "</td><td>"  .$row["amountShipped"]. "</td><td>" . $row["dateOfOrder"]. 
 			        "</td><td>" . $row["price_Total"]. "</td></tr>";
 			    }
 			    echo "</table>";
@@ -125,20 +128,37 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			
 			?>
 			</table>
-	 
-	 
-	
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-	<script src="/docs/4.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-	<script src="dashboard.js"></script>
+<br>
+
+<h3>Order Inventory</h3>
+<div class="form-group"><div class="col-md-6">
+			<form method="post" action="order_php.php">
+				*Product ID: <input name="idProduct" type="number" min="1" max="9999" class = "form-control" required>
+				 <div class="help-block with-errors"></div>
+                
+				<br>
+				*Title: <input name="title" type="text" class = "form-control" required>
+				<br>
+				*First: <input name="first" type="text" class = "form-control" required>
+				<br>
+				*Middle: <input name="middle" type="text" class = "form-control" required>
+				<br>
+				*Last: <input name="last" type="text" class = "form-control" required>
+				<br>
+				*Amount Shipped: <input name="amountShipped" type="number" class = "form-control" required>
+				<br>
+				*Date: <input name="date" type="date" class = "form-control" required>
+				<br>
+				*Account ID: <input name="accountID" type="number" class = "form-control" required>
+				<br>
+				*Total Price: <input name="priceTotal" type="number" class = "form-control" required>
+				<br>
+				<input type = "submit" value = "Order">
+				
+			
+                </div>
+            </div>
+			</form> 
+</center>
 </body>
 </html>

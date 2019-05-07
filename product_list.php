@@ -3,13 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author"
-	content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-<meta name="generator" content="Jekyll v3.8.5">
-<title>Dashboard Template · Bootstrap</title>
+<title>Products Page</title>
 <!-- BootstrapCDN from https://getbootstrap.com/ -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -51,7 +45,7 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			name</a> <input class="form-control form-control-dark w-100" type="text"
 			placeholder="Search" aria-label="Search">
 		<ul class="navbar-nav px-3">
-			<li class="nav-item text-nowrap"><a class="nav-link" href="#">Sign
+			<li class="nav-item text-nowrap"><a class="nav-link" href="login.php">Sign
 					out</a></li>
 		</ul>
 	</nav>
@@ -80,31 +74,27 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			<div
 				class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 				<h1 class="h1">Products</h1>
-				<div class="btn-toolbar mb-2 mb-md-0">
-					<div class="btn-group mr-2">
-						<button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-						<button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-					</div>
-					<button type="button"
-						class="btn btn-sm btn-outline-secondary dropdown-toggle">
-						<span data-feather="calendar"></span> This week
-					</button>
-				</div>
 			</div>
 			
-			<h2>Detailed Product List</h2>
+						<h2>Detailed Product List</h2>
 			<table>
-				<tr>
-					<th>ID</th>
-					<th>Name</th>
-					<th>Part Number</th>
-					<th>Product Label</th>
-					<th>Starting Inventory</th>
-					<th>Inventory Received</th>
-					<th>Inventory Shipped</th>
-					<th>Quantity On Hand</th>
-					<th>Price Per Unit</th>
-				</tr>
+				<div class="container">
+				<div class="row">
+				<div class="col-md-4">
+				<table class="table table-responsive">
+      				<thead>
+        				<tr>
+          					<th>ID</th>
+							<th>Name</th>
+							<th>Part Number</th>
+							<th>Product Label</th>
+							<th>Starting Inventory</th>
+							<th>Inventory Received</th>
+							<th>Inventory Shipped</th>
+							<th>Quantity On Hand</th>
+							<th>Price Per Unit</th>
+        				</tr>
+      				</thead>
 			<?php 
 			$servername = "avl.cs.unca.edu";
 			$username = "ewarren1";
@@ -135,49 +125,51 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			<canvas class="my-4 w-100" id="myChart" width="900" height="100"></canvas>
 			
 			<h3>Add Inventory</h3>
+			<div class="form-group"><div class="col-md-6">
 			<form method="post" action="insert_product.php">
-				*Product ID: <input name="idProduct" type="number" min="1" max="9999" required>
+				*Product ID: <input name="idProduct" type="number" min="1" max="9999" class = "form-control" required>
 				<br>
-				*Product Name: <input name="productName" type="text" required>
+				*Product Name: <input name="productName" type="text" class = "form-control" required>
 				<br>
-				*Part Number: <input name="partNumber" type="text" required>
+				*Part Number: <input name="partNumber" type="text" class = "form-control" required>
 				<br>
-				*Product Description: <input name="productLabel" type="text" required>
+				*Product Description: <input name="productLabel" type="text" class = "form-control" required>
 				<br>
-				*Starting Inventory: <input name="startingInventory" type="number" min="0" max="9999" required>
+				*Starting Inventory: <input name="startingInventory" type="number" min="0" max="9999" class = "form-control" required>
 				<br> 
-				*Inventory Received: <input name="invertoryRecieved" type="number" min="0" max="9999" required>
+				*Inventory Received: <input name="invertoryRecieved" type="number" min="0" max="9999" class = "form-control" required>
 				<br> 
-				*Inventory Shipped: <input name="inventoryShipped" type="number" min="0" max="9999" required>
+				*Inventory Shipped: <input name="inventoryShipped" type="number" min="0" max="9999" class = "form-control" required>
 				<br> 
-				*Inventory On Hand: <input name="inventoryOnHand" type="number" min="0" max="9999" required>
+				*Inventory On Hand: <input name="inventoryOnHand" type="number" min="0" max="9999" class = "form-control" required>
 				<br>
-				*Price Per Unit: <input name="price_Per_Unit" type="number" min="1" max="9999" required>
+				*Price Per Unit: <input name="price_Per_Unit" type="number" min="1" max="9999" class = "form-control" required>
 				<br>
 				<input type = "submit" value = "Submit">
-			</form>
+			</form></div></div>
 			
 			<canvas class="my-4 w-100" id="myChart" width="900" height="100"></canvas>
 			
 			<h3>Update Inventory</h3>
+			<div class="form-group"><div class="col-md-6">
 			<form method="post" action="update_product.php">
-				*ID to Update: <input name="idProduct" type="number" min="1" max="9999" required>
+				*ID to Update: <input name="idProduct" type="number" min="1" max="9999" class = "form-control" required>
 				<br>
-				*New Product Name: <input name="productName" type="text" required>
+				*New Product Name: <input name="productName" type="text" class = "form-control" required>
 				<br>
-				*New Part Number: <input name="partNumber" type="text" required>
+				*New Part Number: <input name="partNumber" type="text" class = "form-control" required>
 				<br>
-				New Product Description: <input name="productLabel" type="text">
+				New Product Description: <input name="productLabel" class = "form-control" type="text">
 				<br>
-				*New Starting Inventory: <input name="startingInventory" type="text" required>
+				*New Starting Inventory: <input name="startingInventory" class = "form-control" type="text" required>
 				<br> 
-				New Inventory Received: <input name="invertoryRecieved" type="text">
+				New Inventory Received: <input name="invertoryRecieved" class = "form-control" type="text">
 				<br> 
-				New Inventory Shipped: <input name="inventoryShipped" type="text">
+				New Inventory Shipped: <input name="inventoryShipped" class = "form-control" type="text">
 				<br> 
-				*New Inventory On Hand: <input name="inventoryOnHand" type="text" required>
+				*New Inventory On Hand: <input name="inventoryOnHand" class = "form-control" type="text" required>
 				<br>
-				*New Price Per Unit: <input name="price_Per_Unit" type="number" min="1" max="9999" required>
+				*New Price Per Unit: <input name="price_Per_Unit" type="number" min="1" max="9999" class = "form-control" required>
 				<br>
 				<input type = "submit" value = "Update">
 			</form>
@@ -185,29 +177,14 @@ link rel ="canonical" href ="https: //getbootstrap.com /docs/4.3
 			<canvas class="my-4 w-100" id="myChart" width="900" height="100"></canvas>
 			
 			<h3>Delete Inventory</h3>
+			<div class="form-group"><div class="col-md-6">
 			<form method="post" action="delete_product.php">
-				ID to Delete: <input name="idProduct" type="number" min="1" max="9999" required>
+				ID to Delete: <input name="idProduct" type="number" min="1" max="9999"  class = "form-control"required>
 				<br>
 				<input type = "submit" value = "Delete">
-			</form>
-			
-			
-			
-			
+			</form>			
 			</main>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-	<script src="/docs/4.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-	<script src="dashboard.js"></script>
 </body>
 </html>
